@@ -1,6 +1,9 @@
 package org.example;
 
+import org.example.cadastro.OpcoesLista;
+import org.example.cadastro.RecuperarLista;
 import org.example.entidades.Lista;
+import org.example.entidades.Tarefa;
 
 import java.util.Scanner;
 
@@ -19,18 +22,31 @@ public class Main
         System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
         int opcao = scanner.nextInt();
         do {
-
             Lista lista = null;
             switch (opcao) {
                 case 1:
-                    lista = new Lista();
+                    lista = OpcoesLista.cadastrarLista(scanner);
+                    System.out.println("(1) Castrar nova Tarefa; (0)Retornar ao menu Principal");
+                    int opcao1= scanner.nextInt();
+                    switch (opcao1){
+                        case 1:
+                            boolean proximo = false;
+                            do {
+                                Tarefa tarefa = new Tarefa();
+                                System.out.println("Deseja cadastrar outra tarefa (S) Sim; (N) Não");
+                            } while (scanner.next().equalsIgnoreCase("s"));
+                            break;
+                    }
                     break;
                 case 2:
                     System.out.println("Qual lista você quer visualizar? ");
+                    lista= OpcoesLista.recuperarLista(scanner.next());
+                    OpcoesLista.imprimeLista(lista);
                     break;
             }
             System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
-        }while (scanner.nextInt()!=0);
+            opcao= scanner.nextInt();
+        }while (opcao!=0);
 
         System.out.println("Até a próxima");
 
