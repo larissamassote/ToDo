@@ -1,6 +1,9 @@
 package org.example;
 
+import org.example.cadastro.OpcoesLista;
+import org.example.cadastro.RecuperarLista;
 import org.example.entidades.Lista;
+import org.example.entidades.Tarefa;
 
 import java.util.Scanner;
 
@@ -13,30 +16,44 @@ public class Main
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println( "Olá, informe seu primeiro nome:" );
-        String nomeUsuario=scanner.next();
-
-        System.out.println( "(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo" );
+        System.out.println("Bem vindo!");
+        //System.out.println( "Olá, informe seu primeiro nome:" );
+        //String nomeUsuario=scanner.next();
+        System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
         int opcao = scanner.nextInt();
-        switch (opcao){
-            case 0:
-                System.out.println("Tchau, até a proxima");
-                break;
-            case 1:
-                System.out.println("Nome da lista: ");
-                String titulo = scanner.next();
-                System.out.println("Cor da lista: ");
-                String cor = scanner.next();
+        do {
+            Lista lista = null;
+            switch (opcao) {
+                case 1:
+                    lista = OpcoesLista.cadastrarLista(scanner);
+                    System.out.println("(1) Castrar nova Tarefa; (0)Retornar ao menu Principal");
+                    int opcao1= scanner.nextInt();
+                    switch (opcao1){
+                        case 1:
+                            boolean proximo = false;
+                            do {
+                                Tarefa tarefa = new Tarefa();
+                                System.out.println("Deseja cadastrar outra tarefa (S) Sim; (N) Não");
+                            } while (scanner.next().equalsIgnoreCase("s"));
+                            break;
+                    }
+                    break;
+                case 2:
+                    System.out.println("criar método para imprimir as listas e tarefas");
+                    //lista= OpcoesLista.recuperarLista(scanner.next());
+                    //Lista.imprimirLista(lista); criar metodo para imprimir lista
+                    break;
+            }
+            System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
+            opcao= scanner.nextInt();
+        }while (opcao!=0);
 
-                Lista lista = new Lista(titulo, cor);
-                break;
-
-        }
-        System.out.println("Fim.");
+        System.out.println("Até a próxima");
 
     }
 }
+
+//ANOTACOES SOBRE O APLICATIVO//
 //Nome do Usuário
 //---------------
 //Listas:
