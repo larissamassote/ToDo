@@ -3,7 +3,7 @@ package org.example.entidades;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Tarefa{
+public class Tarefa implements Opcoes{
     private String nomeTarefa;
     private String dataEstimada;
     private boolean eImportante;
@@ -42,4 +42,18 @@ public class Tarefa{
         this.anotacao = anotacao;
     }
 
+    @Override
+    public void excluir() {
+
+    }
+
+    @Override
+    public void imprimir() {
+
+    }
+
+    @Override
+    public void mostrarOpcoes() {
+
+    }
 }

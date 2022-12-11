@@ -2,12 +2,10 @@ package org.example.cadastro;
 
 import org.example.bancos.BancoLista;
 import org.example.entidades.Lista;
-import org.example.entidades.Tarefa;
-
-import java.util.ArrayList;
+import org.example.entidades.Opcoes;
 import java.util.Scanner;
 
-public class OpcoesLista {
+public class OpcoesLista implements Opcoes {
 
     public static Lista cadastrarLista(Scanner scanner){
 
@@ -25,15 +23,23 @@ public class OpcoesLista {
     public static Lista recuperarLista(String titulo) {
         Scanner scanner = new Scanner(System.in);
         BancoLista bancoLista = BancoLista.getInstance();// new BancoTurma(); //objeto 1
-
+        System.out.println("lista recuperada");
         return  bancoLista.procurarPorNome(scanner.next()).orElseThrow(() -> new RuntimeException("Lista não encontrada"));
     }
 
-    public static String imprimeLista(Lista lista){
-        String titulo= lista.getTitulo();
-        ArrayList<Tarefa> tarefasDaLista = lista.getTarefas();
+    @Override
+    public void excluir() {
 
-        return titulo+"\n"+tarefasDaLista;
+    }
+
+    @Override
+    public void imprimir() {
+
+    }
+
+    @Override
+    public void mostrarOpcoes() {
+
     }
 
 }

@@ -16,9 +16,9 @@ public class Main
     public static void main( String[] args )
     {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println( "Olá, informe seu primeiro nome:" );
-        String nomeUsuario=scanner.next();
+        System.out.println("Bem vindo!");
+        //System.out.println( "Olá, informe seu primeiro nome:" );
+        //String nomeUsuario=scanner.next();
         System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
         int opcao = scanner.nextInt();
         do {
@@ -39,9 +39,9 @@ public class Main
                     }
                     break;
                 case 2:
-                    System.out.println("Qual lista você quer visualizar? ");
-                    lista= OpcoesLista.recuperarLista(scanner.next());
-                    OpcoesLista.imprimeLista(lista);
+                    System.out.println("criar método para imprimir as listas e tarefas");
+                    //lista= OpcoesLista.recuperarLista(scanner.next());
+                    //Lista.imprimirLista(lista); criar metodo para imprimir lista
                     break;
             }
             System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
@@ -52,6 +52,8 @@ public class Main
 
     }
 }
+
+//ANOTACOES SOBRE O APLICATIVO//
 //Nome do Usuário
 //---------------
 //Listas:

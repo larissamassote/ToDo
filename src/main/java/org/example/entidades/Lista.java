@@ -1,7 +1,6 @@
 package org.example.entidades;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Lista {
@@ -33,5 +32,11 @@ public class Lista {
     }
     public ArrayList<Tarefa> getTarefas() {
         return tarefas;
+    }
+    public void imprimirLista(Lista lista){
+        System.out.println("imprimir lista");
+
+        System.out.println(titulo+"\n"+tarefas);
+
     }
 }

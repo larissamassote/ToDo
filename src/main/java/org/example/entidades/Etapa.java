@@ -2,7 +2,7 @@ package org.example.entidades;
 
 import java.util.Scanner;
 
-public class Etapa {
+public class Etapa{
     private String nomeEtapa;
 
     public Etapa(){
