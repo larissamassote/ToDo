@@ -16,24 +16,23 @@ public class Main
 
         System.out.println( "Olá, informe seu primeiro nome:" );
         String nomeUsuario=scanner.next();
-
-        System.out.println( "(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo" );
+        System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
         int opcao = scanner.nextInt();
-        switch (opcao){
-            case 0:
-                System.out.println("Tchau, até a proxima");
-                break;
-            case 1:
-                System.out.println("Nome da lista: ");
-                String titulo = scanner.next();
-                System.out.println("Cor da lista: ");
-                String cor = scanner.next();
+        do {
 
-                Lista lista = new Lista(titulo, cor);
-                break;
+            Lista lista = null;
+            switch (opcao) {
+                case 1:
+                    lista = new Lista();
+                    break;
+                case 2:
+                    System.out.println("Qual lista você quer visualizar? ");
+                    break;
+            }
+            System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
+        }while (scanner.nextInt()!=0);
 
-        }
-        System.out.println("Fim.");
+        System.out.println("Até a próxima");
 
     }
 }
