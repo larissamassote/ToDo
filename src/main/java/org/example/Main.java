@@ -1,10 +1,8 @@
 package org.example;
 
-import org.example.cadastro.OpcoesLista;
-import org.example.cadastro.RecuperarLista;
-import org.example.entidades.Lista;
-import org.example.entidades.Tarefa;
-
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -15,40 +13,36 @@ public class Main
 {
     public static void main( String[] args )
     {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Bem vindo!");
-        //System.out.println( "Olá, informe seu primeiro nome:" );
-        //String nomeUsuario=scanner.next();
-        System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
-        int opcao = scanner.nextInt();
-        do {
-            Lista lista = null;
-            switch (opcao) {
-                case 1:
-                    lista = OpcoesLista.cadastrarLista(scanner);
-                    System.out.println("(1) Castrar nova Tarefa; (0)Retornar ao menu Principal");
-                    int opcao1= scanner.nextInt();
-                    switch (opcao1){
-                        case 1:
-                            boolean proximo = false;
-                            do {
-                                Tarefa tarefa = new Tarefa();
-                                System.out.println("Deseja cadastrar outra tarefa (S) Sim; (N) Não");
-                            } while (scanner.next().equalsIgnoreCase("s"));
-                            break;
-                    }
-                    break;
-                case 2:
-                    System.out.println("criar método para imprimir as listas e tarefas");
-                    //lista= OpcoesLista.recuperarLista(scanner.next());
-                    //Lista.imprimirLista(lista); criar metodo para imprimir lista
-                    break;
-            }
-            System.out.println("(1) Cadastrar lista; (2) Visualizar lista; (0) Fechar aplicativo");
-            opcao= scanner.nextInt();
-        }while (opcao!=0);
+        Usuario usuario = new Usuario();
+        Lista lista = new Lista();
+        Tarefa tarefa = new Tarefa();
+        System.out.println("--------------OBJETOS CRIADOS------------");
+        System.out.println(usuario);
+        System.out.println(lista);
+        System.out.println(tarefa);
+        System.out.println("-----------------------------------------");
 
-        System.out.println("Até a próxima");
+        //Usuário setters
+        usuario.setNome("Larissa Guimarães Massote");
+        usuario.setEmail("massote.larissa@gmail.com");
+        //Lista setters
+        lista.setCor("Laranja");
+        lista.setNome("Projeto Orientação a Objetos");
+        //Tarefas setters
+        tarefa.setDescricao("Diagrama UML");
+        Calendar c = Calendar.getInstance();
+        c.set(Calendar.YEAR, 2022);
+        c.set(Calendar.MONTH, Calendar.DECEMBER);
+        c.set(Calendar.DAY_OF_MONTH, 14);
+        tarefa.setDataFim(c);
+        tarefa.seteImportante(true);
+        tarefa.setAnotacao("Essa tarefa vale nota na média final");
+
+        System.out.println("------------Valores inseridos------------");
+        System.out.println(usuario);
+        System.out.println(lista);
+        System.out.println(tarefa);
+        System.out.println("-----------------------------------------");
 
     }
 }
