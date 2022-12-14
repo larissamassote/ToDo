@@ -15,11 +15,12 @@ public class Main
     {
         Usuario usuario = new Usuario();
         Lista lista = new Lista();
-        Tarefa tarefa = new Tarefa();
+
+
         System.out.println("--------------OBJETOS CRIADOS------------");
         System.out.println(usuario);
         System.out.println(lista);
-        System.out.println(tarefa);
+        //System.out.println(lista.getTarefas(0));
         System.out.println("-----------------------------------------");
 
         //Usuário setters
@@ -28,22 +29,38 @@ public class Main
         //Lista setters
         lista.setCor("Laranja");
         lista.setNome("Projeto Orientação a Objetos");
-        //Tarefas setters
-        tarefa.setDescricao("Diagrama UML");
+
+        //Tarefa 1 setters
+
+        lista.addTarefa();
         Calendar c = Calendar.getInstance();
         c.set(Calendar.YEAR, 2022);
         c.set(Calendar.MONTH, Calendar.DECEMBER);
-        c.set(Calendar.DAY_OF_MONTH, 14);
-        tarefa.setDataFim(c);
-        tarefa.seteImportante(true);
-        tarefa.setAnotacao("Essa tarefa vale nota na média final");
+        c.set(Calendar.DAY_OF_MONTH, 11);
+        lista.setTarefas(0, "Diagrama UML", c, true, "Essa tarefa vale nota na média final");
 
+        //Tarefa 2 setters
+
+        lista.addTarefa();
+
+        c.set(Calendar.YEAR, 2023);
+        c.set(Calendar.MONTH, Calendar.JANUARY);
+        c.set(Calendar.DAY_OF_MONTH, 14);
+        lista.setTarefas(1, "Apresentação", c, true, "Essa tarefa vale nota na média final");
+
+        System.out.println(lista.arrayTamanho());
         System.out.println("------------Valores inseridos------------");
+        System.out.println("USUÁRIO");
         System.out.println(usuario);
+        System.out.println("LISTA");
         System.out.println(lista);
-        System.out.println(tarefa);
+        System.out.println("TAREFA");
+        System.out.println(lista.getTarefas(0).toString());
         System.out.println("-----------------------------------------");
 
+        //Excluir Tarefa
+        lista.excluirTarefa("Diagrama UML");
+        lista.getTarefas(0).toString();
     }
 }
 

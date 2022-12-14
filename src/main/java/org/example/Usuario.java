@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Usuario {
     private String nome;
@@ -9,6 +8,7 @@ public class Usuario {
     private ArrayList<Lista> listas;
 
     public Usuario(){
+        listas = new ArrayList<>();
         System.out.println("usuario criado");
     }
 

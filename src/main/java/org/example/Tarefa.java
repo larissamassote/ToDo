@@ -48,6 +48,6 @@ public class Tarefa {
 
     @Override
     public String toString() {
-        return "Descricao: "+descricao+"\nData Fim: "+dataFim.get(Calendar.DAY_OF_MONTH)+"/"+dataFim.get(Calendar.MONTH)+"/"+dataFim.get(Calendar.YEAR)+"\nEssa tarefa é importante: "+eImportante+"\nAnotacao: "+anotacao;
+        return "Descricao: "+descricao+"\nData Fim: "+dataFim.get(Calendar.DAY_OF_MONTH)+"/"+(dataFim.get(Calendar.MONTH)+1)+"/"+dataFim.get(Calendar.YEAR)+"\nEssa tarefa é importante: "+eImportante+"\nAnotacao: "+anotacao;
     }
 }
